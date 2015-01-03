@@ -46,7 +46,7 @@ ROUTING_GW="172.31.31.254"
 ADMIN_PASS="Password"
 ADMIN_TRUST1="172.31.31.0 255.255.255.0"
 
-echo -e '
+echo "
 
 # グローバル設定
 config system global
@@ -87,6 +87,6 @@ config system admin
   end
 
 show system admin
-'
+"
 exit 0
 
