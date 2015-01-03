@@ -52,6 +52,7 @@ echo "
 config system global
   set timezone $TIMEZONE
   set language $LANGUAGE
+  set hostname $HOSTNAME
   end
 
 show system global
