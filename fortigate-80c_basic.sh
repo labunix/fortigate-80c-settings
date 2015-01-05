@@ -30,7 +30,7 @@
 #
 
 TIMEZONE="60"
-LAGUAGE="japanese"
+LANGUAGE="japanese"
 HOSTNAME="FGT-UTM"
 
 # 管理NIC設定
