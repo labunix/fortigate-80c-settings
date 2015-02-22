@@ -46,6 +46,10 @@ ROUTING_GW="172.31.31.254"
 ADMIN_PASS="Password"
 ADMIN_TRUST1="172.31.31.0 255.255.255.0"
 
+# WAN1設定
+
+WAN1IP="192.168.1.252/255.255.255.248"
+
 echo "
 
 # グローバル設定
@@ -78,6 +82,17 @@ config router static
   end
 
 show router static
+
+# WAN1設定
+
+config system interface
+  edit wan1
+  set ip $WANIP
+  set allowaccess ping
+  set mode static
+  set type physical
+  set status up
+  end
 
 # 管理者設定
 
