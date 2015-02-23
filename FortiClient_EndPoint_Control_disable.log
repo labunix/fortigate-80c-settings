@@ -1,6 +1,7 @@
 # before
 show firewall service custom "EndPointControl"
-show firewall local-in-policy
+show firewall service category "FortiClient"
+show firewall local-in-policy 1
 
 config firewall local-in-policy
   delete 1
@@ -10,7 +11,12 @@ config firewall service custom
   delete "EndPointControl"
   end
 
+config firewall service category
+  delete "FortiClient"
+  end
+
 # after
 show firewall service custom "EndPointControl"
-show firewall local-in-policy
+show firewall service category "FortiClient"
+show firewall local-in-policy 1
 
