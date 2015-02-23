@@ -1,0 +1,24 @@
+# before
+show firewall service custom "EndPointControl"
+show firewall local-in-policy
+
+config firewall service custom
+  edit "EndPointControl"
+    set category "FortiClient"
+    set tcp-portrange 8009-8009
+end
+
+config firewall local-in-policy
+edit 1
+set intf wan1
+set srcaddr all
+set dstaddr all
+set service "EndPointControl"
+set action deny
+set schedule always
+end
+
+# after
+show firewall service custom "EndPointControl"
+show firewall local-in-policy
+

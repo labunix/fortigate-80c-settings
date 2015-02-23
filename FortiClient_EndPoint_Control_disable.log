@@ -1,0 +1,16 @@
+# before
+show firewall service custom "EndPointControl"
+show firewall local-in-policy
+
+config firewall local-in-policy
+  delete 1
+  end
+
+config firewall service custom
+  delete "EndPointControl"
+  end
+
+# after
+show firewall service custom "EndPointControl"
+show firewall local-in-policy
+
