@@ -1,0 +1,101 @@
+# for Example
+# Last UPdate : 2015/02/24
+# cat fgt-check.log | ssh admin@[your-fortigate-ip-address] | sed s/"^.*# "//g | tee -a check.log 2>&1
+#
+
+# terminal length 0
+config system console
+    set output standard
+end
+
+# 全体
+get system global
+
+# ログインユーザ
+get system admin list
+
+# NIC状態
+get system interface physical
+
+# 現在時刻と時刻同期
+execute date
+execute time
+
+# NTPサーバ
+get system ntp
+
+# DHCPサーバ
+get system dhcp server
+get system dhcp6 server
+
+# DNS参照
+get system dns
+
+# ライセンス
+get system fortiguard
+
+# システムとパターンDB
+get system status
+
+# update
+diagnose test update info
+
+# ディスク
+diagnose hardware deviceinfo disk
+
+# NIC
+diagnose hardware deviceinfo nic wan1
+diagnose hardware deviceinfo nic internal
+
+# CPU、メモリの使用率
+get system performance status
+
+# スキャンユニット
+get test scanunit 4
+
+# 起動時のエラーチェック
+get system startup-error-log
+
+# デフォルトのログメッセージ
+diagnose test log 
+
+# L1 インターフェイス
+get system interface physical
+
+# L2 ARP
+get system arp
+
+# L3 Routing
+get router info routing-table details
+
+# L4 セッションリスト
+get system session list | grep .
+
+# L4 セッションの統計
+get system session-info statistics
+
+# L4 セッションテーブルの詳細
+diagnose sys session full-stat 
+
+# L3-L7 Firewallの統計
+get system performance firewall statistics
+
+# L3-L7 Firewallのスループット情報
+diagnose firewall statistic show 
+
+# URLフィルタの統計
+diagnose ips urlfilter status 
+
+# キャプチャ
+#diagnose sniffer packet any "tcp port 80" 4 10
+#diagnose sniffer packet any "tcp port 25" 4 10
+#diagnose sniffer packet any "tcp port 1328" 4 10
+#diagnose sniffer packet any "udp port 123" 4 10
+diagnose sniffer packet any "udp port 53" 4 10
+
+# more(ログオフ時に自動で戻るけど。。。)
+
+config system console
+    set output more
+end
+exit
