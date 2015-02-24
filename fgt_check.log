@@ -57,7 +57,7 @@ get test scanunit 4
 get system startup-error-log
 
 # デフォルトのログメッセージ
-diagnose test log 
+diagnose log test
 
 # IPとNICデバイスのリスト
 diagnose ip address list
