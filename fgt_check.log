@@ -59,6 +59,9 @@ get system startup-error-log
 # デフォルトのログメッセージ
 diagnose test log 
 
+# IPとNICデバイスのリスト
+diagnose ip address list
+
 # L1 インターフェイス
 get system interface physical
 
