@@ -45,5 +45,5 @@ grep "^[A-Z].*packets" $LOGNAME
 grep "error\|fail" $LOGNAME
 
 # disable チェック
-grep "error\|fail" $LOGNAME
+grep "disable" $LOGNAME
 
