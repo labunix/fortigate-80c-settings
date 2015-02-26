@@ -42,8 +42,8 @@ grep "^IP" $LOGNAME
 grep "^[A-Z].*packets" $LOGNAME
 
 # error|fail チェック
-grep "error\|fail" $LOGNAME
+grep "error\|fail=" $LOGNAME
 
 # disable チェック
-grep "disable" $LOGNAME
+#grep "disable" $LOGNAME
 
