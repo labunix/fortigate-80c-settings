@@ -31,7 +31,8 @@ if [ "$COUNT" == "" ];then
 fi
 
 MAX=`wc -l < dom-bl-base.txt`
-if [ $MAX -gt $COUNT ];then
+
+if [ "$COUNT" -ge "$MAX" ];then
   COUNT=$MAX
 fi
 
