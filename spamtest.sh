@@ -14,13 +14,6 @@ if [ "$MAILPORT" == "" ]; then
   MAILPORT="25";\
 fi
 
-echo "Input Loop count (default 5)"
-read COUNT
-
-if [ "$COU_NT" == "" ];then
-  COUNT=5
-fi  
-
 wget --help > /dev/null 2>&1
 if [ "$?" -ne 0 ]; then
   echo "Not Found Command : wget" >&2
@@ -30,7 +23,17 @@ else
     wget http://www.joewein.net/dl/bl/dom-bl-base.txt
 fi
 
+echo "Input Loop count (default 5)"
+read COUNT
+
+if [ "$COUNT" == "" ];then
+  COUNT=5
+fi
+
 MAX=`wc -l < dom-bl-base.txt`
+if [ $MAX -gt $COUNT ];then
+  COUNT=$MAX
+fi
 
 for num in `seq 1 $COUNT`;do \
   PICKUP="$(($(($RANDOM % $MAX))+1))"
