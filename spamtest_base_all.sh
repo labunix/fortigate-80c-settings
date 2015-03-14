@@ -40,6 +40,7 @@ Subject: Test $num / $MAX [URL:$SPAMURL]
 [URL:$SPAMURL]" | \
   msmtp \
     --host=${MAILIP} \
+    --port=${MAILPORT} \
     -f `whoami`@`cat /etc/mailname` \
     --auto-from=on \
     --domain `cat /etc/mailname` \
