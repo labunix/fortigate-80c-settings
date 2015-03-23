@@ -11,42 +11,42 @@ PROXYPORT=3128
 
 PleaseInput () {
   # MAILIP,MAILPORT
-  echo "Input Mail Server IP(default 192.168.1.251)"
+  echo "Input Mail Server IP(default 192.168.1.251)" >&2
   read MAILIP
 
   if [ "$MAILIP" == "" ]; then
     MAILIP="192.168.1.251";\
   fi
 
-  echo "Input Mail Server Port (default 25)"
+  echo "Input Mail Server Port (default 25)" >&2
   read MAILPORT
 
   if [ "$MAILPORT" == "" ]; then
     MAILPORT="25";\
   fi
   # WEBIP,WEBPORT
-  echo "Input Web Server IP(default 192.168.1.251)"
+  echo "Input Web Server IP(default 192.168.1.251)" >&2
   read WEBIP
 
   if [ "$WEBIP" == "" ]; then
     WEBIP="192.168.1.251";\
   fi
 
-  echo "Input Web Server Port (default 80)"
+  echo "Input Web Server Port (default 80)" >&2
   read WEBPORT
 
   if [ "$WEBPORT" == "" ]; then
     WEBPORT="80";\
   fi
 
-  echo "Input Proxy Server IP(default 192.168.1.251)"
+  echo "Input Proxy Server IP(default 192.168.1.251)" >&2
   read PROXYIP
 
   if [ "$PROXYIP" == "" ]; then
     PROXYIP="192.168.1.251";\
   fi
 
-  echo "Input Proxy Server Port (default 3128)"
+  echo "Input Proxy Server Port (default 3128)" >&2
   read PROXYPORT
 
   if [ "$PROXYPORT" == "" ]; then
