@@ -64,9 +64,9 @@ fi
 
 msmtp --help > /dev/null 2>&1 && \
 echo "To: `whoami`@`cat /etc/mailname`
-Subject: Test  date '+%Y/%m/%d %H:%M:%S'
+Subject: Test  `date '+%Y/%m/%d %H:%M:%S'`
 
-date '+%Y/%m/%d %H:%M:%S'" | \
+`date '+%Y/%m/%d %H:%M:%S'`" | \
   msmtp \
     --host=${MAILIP} \
     --port=${MAILPORT} \
