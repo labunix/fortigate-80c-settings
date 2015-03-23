@@ -56,9 +56,9 @@ PleaseInput () {
 }
 
 if [ "$1" == "-b" ] ;then
-  echo "batch mode"
+  echo "batch mode" >&2
 else
-  echo "Please Input Parameter"
+  echo "Please Input Parameter" >&2
   PleaseInput
 fi
 
